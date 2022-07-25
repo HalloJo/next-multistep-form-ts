@@ -1,4 +1,6 @@
-export type FormDataProps = {
+import React from "react";
+
+export type FormData = {
   email: string;
   password: string;
   name: string;
@@ -7,7 +9,7 @@ export type FormDataProps = {
   dataIsCorrect: boolean;
 };
 
-export const formData: FormDataProps = {
+export const data: FormData = {
   email: "",
   password: "",
   name: "",
@@ -15,3 +17,5 @@ export const formData: FormDataProps = {
   number: "",
   dataIsCorrect: false,
 };
+
+export type SetFormData = (formData: FormData) => void;
