@@ -1,5 +1,5 @@
 import next from "next"
-import { SetFormData } from "../data/formData"
+import { ReactElement } from "react"
 
 type InputProps = {
     label: string,
@@ -9,7 +9,7 @@ type InputProps = {
     onChange: (value: string) => void
 }
 
-const InputElement = (props: InputProps) => {
+const InputElement = (props: InputProps): ReactElement => {
 
     const {label, type, placeholder, value, onChange} = props
 

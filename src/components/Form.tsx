@@ -12,11 +12,28 @@ const Form = (): ReactElement => {
     const [formData, setFormData] = useState(data)
 
     const formTitles: Array<string> = ["SignUp", "PersonalInfo", "Confirm"]
+
+    const length:number = 2
+
+    const handleClickNext = () => {
+        setPage((page) => {
+        return page < length ? page + 1 : 0;
+        });
+        console.log(page);
+        
+    };
+    const handleClickPrevious = () => {
+        setPage((page) => {
+        return page === 0 ? length : page - 1;
+        });
+        console.log(page);
+        
+    };
     
+
     return (
         <>
-            <div className={styles.title}>Form!</div>
-            { page === 0 ? <StepOne formData={formData} setFormData={setFormData} /> : 
+            { page === 0 ? <StepOne formData={formData} setFormData={setFormData} handleClickPrevious={handleClickPrevious} handleClickNext={handleClickNext}  /> : 
               page === 1 ? <StepTwo formData={formData} setFormData={setFormData}  /> : 
               <StepThree formData={formData} setFormData={setFormData} /> }
         </>
