@@ -8,7 +8,10 @@ type ButtonProps = {
     onClick: () => void
 }
 
-const Button = ({label, disabled, onClick, page}: ButtonProps): ReactElement => {
+const Button = (props: ButtonProps): ReactElement => {
+
+    const {label, disabled, onClick, page} = props
+
     return (
         <button disabled={page === 0 && disabled } onClick={onClick} >{label}</button>
     )

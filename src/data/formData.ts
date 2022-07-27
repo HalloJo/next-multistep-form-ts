@@ -4,7 +4,7 @@ export type FormData = {
   email: string;
   password: string;
   name: string;
-  age: number;
+  age?: number;
   number: string;
   dataIsCorrect: boolean;
 };
@@ -13,7 +13,6 @@ export const data: FormData = {
   email: "",
   password: "",
   name: "",
-  age: 0,
   number: "",
   dataIsCorrect: false,
 };
